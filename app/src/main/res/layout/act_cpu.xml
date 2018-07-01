@@ -8,6 +8,7 @@
     tools:context=".ActCpu">
 
     <ListView
+        android:id="@+id/lvCpus"
         android:layout_width="match_parent"
         android:layout_height="404dp" />
 
