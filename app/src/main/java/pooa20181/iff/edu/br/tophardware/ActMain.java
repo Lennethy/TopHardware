@@ -8,12 +8,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+
 public class ActMain extends AppCompatActivity {
 
     private Spinner spPeca;
     private Button btnListar;
     private String hardware;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +26,10 @@ public class ActMain extends AppCompatActivity {
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.select,R.layout.support_simple_spinner_dropdown_item);
         spPeca.setAdapter(adapter);
 
-        hardware = spPeca.getSelectedItem().toString();
-
         btnListar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hardware = spPeca.getSelectedItem().toString();
                 if(hardware.equals("CPU")){
                     Intent cpuit = new Intent(ActMain.this, ActCpu.class);
                     startActivity(cpuit);
