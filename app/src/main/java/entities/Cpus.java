@@ -1,8 +1,9 @@
 package entities;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Cpus {
+public class Cpus implements Serializable{
 
     private String id;
     private String modelo;

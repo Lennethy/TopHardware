@@ -33,7 +33,6 @@ public class ActGpu extends AppCompatActivity {
                 startActivity(mainit);
             }
         });
-
         gpus = new ArrayList<Gpus>();
         gpus.add(new Gpus("p01", "GTX 1070TI", "8GB GDDR5", R.drawable.gtx1070ti, BigDecimal.valueOf(449)));
         gpus.add(new Gpus("p02", "GTX 1080TI", "11GB GDDR5", R.drawable.gtx1080ti, BigDecimal.valueOf(699)));
@@ -41,5 +40,15 @@ public class ActGpu extends AppCompatActivity {
         gpus.add(new Gpus("p04", "Radeon RX580", "8GB GDDR5", R.drawable.rx580, BigDecimal.valueOf(368)));
         this.lvGpus = (ListView) findViewById(R.id.lvGpus);
         this.lvGpus.setAdapter(new GpuListAdapter(this, gpus));
+        this.lvGpus.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+                Gpus gpu = gpus.get(i);
+                Intent intent = new Intent(ActGpu.this, ActGpuDetail.class);
+                intent.putExtra("GPUS", gpu);
+                startActivity(intent);
+            }
+        });
     }
 }
+

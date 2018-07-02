@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActGpuDetail">
+
+    <TextView
+        android:id="@+id/txtview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modelo"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txModelCPU"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Frequência"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txFrequency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtview3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preço ($)"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txPriceCPU"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtview4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Imagem"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageViewCPU"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        app:srcCompat="@drawable/i7770k" />
+
+    <Button
+        android:id="@+id/btnRet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retornar" />
+</LinearLayout>

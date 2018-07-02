@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".ActCpu" />
         <activity android:name=".ActGpu" />
+        <activity android:name=".ActGpuDetail" />
+        <activity android:name=".ActCpuDetail"></activity>
     </application>
 
 </manifest>

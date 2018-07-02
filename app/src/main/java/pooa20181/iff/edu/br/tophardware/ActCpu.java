@@ -1,22 +1,23 @@
 package pooa20181.iff.edu.br.tophardware;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.content.*;
 import android.view.View;
-import android.widget.Button;
-import entities.*;
-import adapters.*;
 import android.widget.*;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import entities.*;
+import adapters.*;
 
 public class ActCpu extends AppCompatActivity {
 
-    private Button btnReturn;
     private ListView lvCpus;
     private List<Cpus> cpus;
+    private Button btnReturn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,5 +40,14 @@ public class ActCpu extends AppCompatActivity {
         cpus.add(new Cpus("p04", "Ryzen 7", "3 GHz", R.drawable.ryzen7, BigDecimal.valueOf(315)));
         this.lvCpus = (ListView) findViewById(R.id.lvCpus);
         this.lvCpus.setAdapter(new CpuListAdapter(this, cpus));
+        this.lvCpus.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+                Cpus cpu = cpus.get(i);
+                Intent intent = new Intent(ActCpu.this, ActCpuDetail.class);
+                intent.putExtra("CPUS", cpu);
+                startActivity(intent);
+            }
+        });
     }
 }
